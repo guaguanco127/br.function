@@ -42,3 +42,11 @@ A mono rise/fall function generator for Max/MSP, built in gen~, in the spirit of
 **Pairs with:** [br.am](https://github.com/guaguanco127/br.am) (unipolar output -> modulation) and [br.scale](https://github.com/guaguanco127/br.scale) (bipolar output -> volume or frequency).
 
 The example patch (_br.function.example.1.0.maxpat) has tabs for an envelope, slew (gate hold and portamento), and cycle (an LFO whose end-of-cycle pulse triggers a second br.function).
+
+## <a name="Credits"></a>Credits
+
+Inspired by the Make Noise Maths function generator.
+
+## <a name="Credits"></a>Credits
+
+Inspired by the Make Noise Maths function generator.
