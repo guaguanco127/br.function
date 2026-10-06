@@ -110,3 +110,7 @@ Open _br.function.example.1.0.maxpat (keep it in the same folder as the abstract
 - **envelope:** Click the button or turn on the metro. The Unipolar output is a sine's volume. Try a short Rise and a long Fall with Fall Curve at 1 (a pluck), then turn Retrigger off and speed up the metro.
 - **slew:** On the left, a gate into Slew rises and holds while the toggle is on. On the right, random note numbers glide into each other (portamento).
 - **cycle:** The top br.function runs in Cycle mode as an LFO. Its End of Cycle pulse triggers a second br.function, a short envelope on noise: one hit per LFO cycle. Turn Time to change the tempo.
+
+## <a name="Credits"></a>Credits
+
+Inspired by the Make Noise Maths function generator.
