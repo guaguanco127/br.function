@@ -1,5 +1,5 @@
 # Max/MSP Abstractions:   
-## br.function.1.0
+## br.function.1.1
 
 
 
@@ -8,7 +8,7 @@ By Brian Riordan
 [brianriordanmusic@gmail.com](mailto:brianriordanmusic@gmail.com)  
 [https://www.brianriordanmusic.com/](https://www.brianriordanmusic.com/) 
   
-Repository for br.function.1.0, with all related files, can be found here: [https://github.com/guaguanco127/br.function](https://github.com/guaguanco127/br.function)  
+Repository for br.function.1.1, with all related files, can be found here: [https://github.com/guaguanco127/br.function](https://github.com/guaguanco127/br.function)  
 Additional programs can be found here: [https://github.com/guaguanco127/br.max](https://github.com/guaguanco127/br.max)
 
 These files were created with Max 9. 
@@ -19,6 +19,7 @@ These files were created with Max 9.
 [What is an abstraction?](#Abstraction)  
 [How To Install](#Install)  
 [How To Use](#Use)  
+[State outlet](#State)  
 [Example Patch](#Example)  
  
  
@@ -32,6 +33,8 @@ The output always chases a target. A trigger sets the target to the top: the out
 **Curved Rise and Fall:** 1 ms to 60 s each, each with its own curve.
 
 **Click-free:** Every sample, the output works out where it sits on the current curve and moves one step along it, so changing a time, a curve or the direction mid-move never makes it jump. Retrigger restarts the rise from the current level, never from 0.
+
+**Two files:** br.function.1.1 is the plain object: its Rise, Fall, curve, Time and Level inlets take signals as well as numbers, so an LFO (or another br.function) can modulate them. br.function.ui.1.1 adds the button, dials and toggles for a [bpatcher], plus a State outlet.
 
 **Three ways to trigger:** the button on the panel, a bang or nonzero number, or a signal. Signal triggers are sample-accurate; bangs land at the start of the next audio block.
 
@@ -65,15 +68,15 @@ By saving your logic in an abstraction, you can create modules that can be used 
 
 1. Make sure you have Max 9 installed in your computer. And, make sure you are using a Max patch that is inside of a folder.  
 
-2. Copy and paste br.function.1.0.maxpat inside of the same folder as the Max patch you are using.
+2. Copy br.function.1.1.maxpat and br.function.ui.1.1.maxpat into the same folder as the Max patch you are using (the .ui file uses the plain object).
 
-3. To use the built-in dials, create a bpatcher object. Then, go inside of its inspector, select "choose" next to "Patcher File" and select the abstraction located within the same folder as your project. Size the bpatcher to 341 x 79 to show all of the controls.
+3. For the version with dials, create a bpatcher object. Then, go inside of its inspector, select "choose" next to "Patcher File" and select br.function.ui.1.1.maxpat. Size the bpatcher to 145 x 155 to show all of the controls.
 
-4. Alternatively, create an object with the abstraction's name ([br.function.1.0], do not include brackets) and control it through its inlets (see below).
+4. For the plain object, create an object with its name (br.function.1.1, do not include brackets) and control it through its inlets (see below).
 
 ## <a name="Use"></a>How To Use
 
-Every control has its own inlet, in the same order as the dials. Sending a value to an inlet moves its on-screen control too, so the display always matches the sound. Values outside a control's range are limited to that range. Hover over an inlet or outlet in Max to see its range and default.
+Every control has its own inlet, in the same order on both files. On the .ui file, sending a value to an inlet moves its on-screen control too, so the display always matches the sound. On the plain object, Rise, Fall, Rise Curve, Fall Curve, Time and Level also take signals (Float below = Signal too). Values outside a control's range are limited to that range. Hover over an inlet or outlet in Max to see its range and default.
 
 | Inlet | Control | Type | Range | Default |
 |---|---|---|---|---|
@@ -95,6 +98,7 @@ Every control has its own inlet, in the same order as the dials. Sending a value
 | 2 | Bipolar: -1 to 1, times Level | Signal |
 | 3 | End of Rise: one-sample pulse when the rise reaches the top | Signal |
 | 4 | End of Cycle: one-sample pulse when the fall lands | Signal |
+| 5 | State (.ui only): the settings as named messages, see [State outlet](#State) | Message |
 
 **Ideas:**
 - Envelope: Unipolar into a [*~] on an oscillator.
@@ -103,13 +107,32 @@ Every control has its own inlet, in the same order as the dials. Sending a value
 - Smoothing an envelope follower: a short Rise and long Fall keep the attack and tame the release.
 - Chains and rhythms: End of Cycle into another br.function's signal Trigger.
 
+## <a name="State"></a>State outlet
+
+The last outlet of the .ui file (State) sends the current settings as named messages the moment they change, for example `rise 250.`, `fallcurve 0.5`, `cycle 1`. Use it to keep a display, Mira or another patch in sync. Pick them out by name with [route rise fall risecurve fallcurve time level retrigger cycle], not by position, so your patch keeps working if a later version adds controls. Repeats are filtered out. The Trigger button is not reported.
+
+| Message | Type | Range |
+|---|---|---|
+| rise | Float | 1 to 60000 ms |
+| fall | Float | 1 to 60000 ms |
+| risecurve | Float | -1 to 1 |
+| fallcurve | Float | -1 to 1 |
+| time | Float | 0.1 to 10 |
+| level | Float | -1 to 1 |
+| retrigger | Int | 0 / 1 |
+| cycle | Int | 0 / 1 |
+
+Each message carries the same value its inlet takes, so a State message can go straight back into an inlet. The plain object has no State outlet: whatever drives it already knows the values.
+
 ## <a name="Example"></a>Example Patch
 
-Open _br.function.example.1.0.maxpat (keep it in the same folder as the abstraction). The first page introduces br.function; the tabs at the top hold the examples. Turn on the audio with the toggle, then raise the gain slider, which starts muted.
+Open _br.function.example.1.1.maxpat (keep it in the same folder as both abstraction files). The first page introduces br.function; the tabs at the top hold the examples. Nothing makes sound: every tab draws on scopes. Turn on the audio with the speaker button (ezdac~) in any tab to start them.
 
-- **envelope:** Click the button or turn on the metro. The Unipolar output is a sine's volume. Try a short Rise and a long Fall with Fall Curve at 1 (a pluck), then turn Retrigger off and speed up the metro.
-- **slew:** On the left, a gate into Slew rises and holds while the toggle is on. On the right, random note numbers glide into each other (portamento).
-- **cycle:** The top br.function runs in Cycle mode as an LFO. Its End of Cycle pulse triggers a second br.function, a short envelope on noise: one hit per LFO cycle. Turn Time to change the tempo.
+- **envelope:** Click the button or turn on the metro. Try a short Rise and a long Fall with Fall Curve at 1 (a pluck), then turn Retrigger off and speed up the metro.
+- **cycle:** The top br.function runs in Cycle mode as an LFO. Its End of Cycle pulse triggers a second br.function: one short envelope per LFO cycle. Turn Time to change the rate.
+- **slew:** On the left, a gate into Slew rises and holds while the toggle is on. On the right, random steps glide into each other.
+- **plain object:** Two br.function.1.1 objects without dials. A slow one (Cycle on, 4 s up and down) drives the other's Time inlet as a signal, so the second LFO speeds up and slows down.
+- **State outlet:** Move the controls and watch each value come out by name through [route].
 
 ## <a name="Credits"></a>Credits
 
