@@ -1042,8 +1042,8 @@
                                             "rect": [
                                                 100.0,
                                                 100.0,
-                                                600.0,
-                                                450.0
+                                                1146.0,
+                                                706.0
                                             ],
                                             "boxes": [
                                                 {
@@ -1051,7 +1051,6 @@
                                                         "fontname": "Arial",
                                                         "fontsize": 12.0,
                                                         "id": "obj-1",
-                                                        "linecount": 11,
                                                         "maxclass": "newobj",
                                                         "numinlets": 0,
                                                         "numoutlets": 1,
@@ -1061,7 +1060,7 @@
                                                         "patching_rect": [
                                                             50.0,
                                                             20.0,
-                                                            30.0,
+                                                            202.0,
                                                             22.0
                                                         ],
                                                         "text": "in 1 @comment trigger: rising edge"
@@ -1072,7 +1071,6 @@
                                                         "fontname": "Arial",
                                                         "fontsize": 12.0,
                                                         "id": "obj-2",
-                                                        "linecount": 9,
                                                         "maxclass": "newobj",
                                                         "numinlets": 0,
                                                         "numoutlets": 1,
@@ -1080,9 +1078,9 @@
                                                             ""
                                                         ],
                                                         "patching_rect": [
-                                                            130.0,
-                                                            20.0,
-                                                            30.0,
+                                                            92.33333333333334,
+                                                            52.0,
+                                                            200.0,
                                                             22.0
                                                         ],
                                                         "text": "in 2 @comment slew input"
@@ -1093,7 +1091,7 @@
                                                         "fontname": "Arial",
                                                         "fontsize": 12.0,
                                                         "id": "obj-3",
-                                                        "linecount": 19,
+                                                        "linecount": 2,
                                                         "maxclass": "newobj",
                                                         "numinlets": 0,
                                                         "numoutlets": 1,
@@ -1101,10 +1099,10 @@
                                                             ""
                                                         ],
                                                         "patching_rect": [
-                                                            210.0,
-                                                            20.0,
-                                                            30.0,
-                                                            22.0
+                                                            134.66666666666669,
+                                                            93.0,
+                                                            197.0,
+                                                            35.0
                                                         ],
                                                         "text": "in 3 @comment rise ms @default 10 @min 0.1 @max 600000"
                                                     }
@@ -1114,7 +1112,7 @@
                                                         "fontname": "Arial",
                                                         "fontsize": 12.0,
                                                         "id": "obj-4",
-                                                        "linecount": 19,
+                                                        "linecount": 2,
                                                         "maxclass": "newobj",
                                                         "numinlets": 0,
                                                         "numoutlets": 1,
@@ -1122,10 +1120,10 @@
                                                             ""
                                                         ],
                                                         "patching_rect": [
-                                                            290.0,
-                                                            20.0,
-                                                            30.0,
-                                                            22.0
+                                                            177.0,
+                                                            150.0,
+                                                            222.0,
+                                                            35.0
                                                         ],
                                                         "text": "in 4 @comment fall ms @default 500 @min 0.1 @max 600000"
                                                     }
@@ -1135,7 +1133,7 @@
                                                         "fontname": "Arial",
                                                         "fontsize": 12.0,
                                                         "id": "obj-5",
-                                                        "linecount": 18,
+                                                        "linecount": 2,
                                                         "maxclass": "newobj",
                                                         "numinlets": 0,
                                                         "numoutlets": 1,
@@ -1143,10 +1141,10 @@
                                                             ""
                                                         ],
                                                         "patching_rect": [
-                                                            370.0,
-                                                            20.0,
-                                                            30.0,
-                                                            22.0
+                                                            219.33333333333334,
+                                                            196.0,
+                                                            184.0,
+                                                            35.0
                                                         ],
                                                         "text": "in 5 @comment rise curve @default 0 @min -1 @max 1"
                                                     }
@@ -1156,7 +1154,7 @@
                                                         "fontname": "Arial",
                                                         "fontsize": 12.0,
                                                         "id": "obj-6",
-                                                        "linecount": 18,
+                                                        "linecount": 2,
                                                         "maxclass": "newobj",
                                                         "numinlets": 0,
                                                         "numoutlets": 1,
@@ -1164,10 +1162,10 @@
                                                             ""
                                                         ],
                                                         "patching_rect": [
-                                                            450.0,
-                                                            20.0,
-                                                            30.0,
-                                                            22.0
+                                                            260.0,
+                                                            244.0,
+                                                            271.0,
+                                                            35.0
                                                         ],
                                                         "text": "in 6 @comment fall curve @default 0 @min -1 @max 1"
                                                     }
@@ -1177,7 +1175,7 @@
                                                         "fontname": "Arial",
                                                         "fontsize": 12.0,
                                                         "id": "obj-7",
-                                                        "linecount": 22,
+                                                        "linecount": 2,
                                                         "maxclass": "newobj",
                                                         "numinlets": 0,
                                                         "numoutlets": 1,
@@ -1185,10 +1183,10 @@
                                                             ""
                                                         ],
                                                         "patching_rect": [
-                                                            530.0,
-                                                            20.0,
-                                                            30.0,
-                                                            22.0
+                                                            299.0,
+                                                            290.0,
+                                                            258.0,
+                                                            35.0
                                                         ],
                                                         "text": "in 7 @comment time multiplier @default 1 @min 0.01 @max 100"
                                                     }
@@ -1198,7 +1196,6 @@
                                                         "fontname": "Arial",
                                                         "fontsize": 12.0,
                                                         "id": "obj-8",
-                                                        "linecount": 17,
                                                         "maxclass": "newobj",
                                                         "numinlets": 0,
                                                         "numoutlets": 1,
@@ -1206,9 +1203,9 @@
                                                             ""
                                                         ],
                                                         "patching_rect": [
-                                                            610.0,
-                                                            20.0,
-                                                            30.0,
+                                                            341.3333333333333,
+                                                            336.0,
+                                                            287.0,
                                                             22.0
                                                         ],
                                                         "text": "in 8 @comment level @default 1 @min -1 @max 1"
@@ -1219,7 +1216,6 @@
                                                         "fontname": "Arial",
                                                         "fontsize": 12.0,
                                                         "id": "obj-9",
-                                                        "linecount": 19,
                                                         "maxclass": "newobj",
                                                         "numinlets": 0,
                                                         "numoutlets": 1,
@@ -1227,9 +1223,9 @@
                                                             ""
                                                         ],
                                                         "patching_rect": [
-                                                            690.0,
-                                                            20.0,
-                                                            30.0,
+                                                            383.6666666666667,
+                                                            377.0,
+                                                            326.0,
                                                             22.0
                                                         ],
                                                         "text": "in 9 @comment retrigger 0/1 @default 1 @min 0 @max 1"
@@ -1240,7 +1236,6 @@
                                                         "fontname": "Arial",
                                                         "fontsize": 12.0,
                                                         "id": "obj-10",
-                                                        "linecount": 19,
                                                         "maxclass": "newobj",
                                                         "numinlets": 0,
                                                         "numoutlets": 1,
@@ -1248,9 +1243,9 @@
                                                             ""
                                                         ],
                                                         "patching_rect": [
-                                                            770.0,
-                                                            20.0,
-                                                            30.0,
+                                                            426.0,
+                                                            420.0,
+                                                            333.0,
                                                             22.0
                                                         ],
                                                         "text": "in 10 @comment cycle 0/1 @default 0 @min 0 @max 1"
@@ -1273,8 +1268,8 @@
                                                             ""
                                                         ],
                                                         "patching_rect": [
-                                                            50.0,
-                                                            80.0,
+                                                            45.0,
+                                                            489.0,
                                                             400.0,
                                                             200.0
                                                         ]
@@ -1285,14 +1280,13 @@
                                                         "fontname": "Arial",
                                                         "fontsize": 12.0,
                                                         "id": "obj-12",
-                                                        "linecount": 10,
                                                         "maxclass": "newobj",
                                                         "numinlets": 1,
                                                         "numoutlets": 0,
                                                         "patching_rect": [
-                                                            50.0,
-                                                            320.0,
-                                                            30.0,
+                                                            45.0,
+                                                            729.0,
+                                                            194.0,
                                                             22.0
                                                         ],
                                                         "text": "out 1 @comment unipolar 0 to 1"
@@ -1303,14 +1297,13 @@
                                                         "fontname": "Arial",
                                                         "fontsize": 12.0,
                                                         "id": "obj-13",
-                                                        "linecount": 10,
                                                         "maxclass": "newobj",
                                                         "numinlets": 1,
                                                         "numoutlets": 0,
                                                         "patching_rect": [
-                                                            130.0,
-                                                            320.0,
-                                                            30.0,
+                                                            172.0,
+                                                            771.0,
+                                                            193.0,
                                                             22.0
                                                         ],
                                                         "text": "out 2 @comment bipolar -1 to 1"
@@ -1321,15 +1314,15 @@
                                                         "fontname": "Arial",
                                                         "fontsize": 12.0,
                                                         "id": "obj-14",
-                                                        "linecount": 11,
+                                                        "linecount": 2,
                                                         "maxclass": "newobj",
                                                         "numinlets": 1,
                                                         "numoutlets": 0,
                                                         "patching_rect": [
-                                                            210.0,
-                                                            320.0,
-                                                            30.0,
-                                                            22.0
+                                                            299.0,
+                                                            805.0,
+                                                            191.0,
+                                                            35.0
                                                         ],
                                                         "text": "out 3 @comment end-of-rise pulse"
                                                     }
@@ -1339,15 +1332,15 @@
                                                         "fontname": "Arial",
                                                         "fontsize": 12.0,
                                                         "id": "obj-15",
-                                                        "linecount": 12,
+                                                        "linecount": 2,
                                                         "maxclass": "newobj",
                                                         "numinlets": 1,
                                                         "numoutlets": 0,
                                                         "patching_rect": [
-                                                            290.0,
-                                                            320.0,
-                                                            30.0,
-                                                            22.0
+                                                            430.0,
+                                                            852.0,
+                                                            191.0,
+                                                            35.0
                                                         ],
                                                         "text": "out 4 @comment end-of-cycle pulse"
                                                     }
